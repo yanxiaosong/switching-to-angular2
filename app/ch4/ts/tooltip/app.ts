@@ -38,6 +38,8 @@ class OverlayMock {
   selector: '[saTooltip]'
 })
 export class Tooltip {
+  // declare a property, and bind it to the value of the result we got from the evaluation of the expression
+  // passed to the attribute
   @Input()
   saTooltip:string;
 
@@ -57,8 +59,9 @@ export class Tooltip {
 @Component({
   selector: 'app',
   templateUrl: './app.html',
-  providers: [Overlay],
+  providers: [Overlay],     // a provider is a resource or Javascript "thing" that Angular uses to provide somethong we want to use
   directives: [Tooltip]
+
 })
 class App {}
 

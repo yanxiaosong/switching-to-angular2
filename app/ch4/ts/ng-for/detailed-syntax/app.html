@@ -3,7 +3,14 @@
   Here's list of the things you need to do:
 </p>
 <ul>
+  <!--template is a place where we can hold markup
+  and make sure that it wont be rendered by the browser.
+   This means that if the Angualr2 DOM Compiler doesnt process the DOM
+   tree, all we are going to see are the h1, p elements-->
   <template ngFor let-todo [ngForOf]="todos">
+    <!--note that the ngForOf attribute is surrounded by brackets. The semantics behind the brackets
+    is that the value of the attribute surrounded by them is an expression, which needs to be evaluated. -->
+
     <li>{{todo}}</li>
   </template>
 </ul>
