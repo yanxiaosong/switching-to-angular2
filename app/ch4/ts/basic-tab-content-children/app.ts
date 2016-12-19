@@ -83,6 +83,8 @@ class Tabs {
   @Output('changed')
   tabChanged: EventEmitter<number> = new EventEmitter<number>();
 
+  // fetch the content children of the give component.
+  // Which means we can get references to all TabTitle and TabContent instances from within the instance of Tab component.
   @ContentChildren(TabTitle)
   tabTitles: QueryList<TabTitle>;
 

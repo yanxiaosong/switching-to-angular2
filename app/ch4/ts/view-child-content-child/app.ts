@@ -37,7 +37,7 @@ class UserPanel {
 
 @Component({
   selector: 'app',
-  template: '<user-panel><user-rating></user-rating></user-panel>',
+  template: '<user-panel><user-rating></user-rating></user-panel> abc',
   directives: [UserPanel, UserRating]
 })
 class App {

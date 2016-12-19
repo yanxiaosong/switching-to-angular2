@@ -2,7 +2,8 @@
 
 <p>
   Add a new todo:
-  <!-- define a new identifier. we can reference the input using the identifier in the template -->
+  <!-- define a new identifier. we can reference the input
+  using the identifier in the template -->
   <input #newtodo type="text">
   <button (click)="addTodo(newtodo.value); newtodo.value = ''">Add</button>
 </p>

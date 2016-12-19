@@ -6,10 +6,16 @@ interface Todo {
   label: string;
 }
 
+// We can think of the inputs as properties (or even arguments) that the given directive accepts.
+//   The outputs could be considered as events that it  triggers.
+//
+// When we use a directive provided by a 3-rd party library, mostly we care about is its inputs and outputs because they define its API.
+
+
 @Component({
   selector: 'input-box',
   template: `
-    <input #todoInput [placeholder]="inputPlaceholder">
+    <input #todoInput [placeholder]="inputPlaceholder">  <!--declare a text input  -->
     <button (click)="emitText(todoInput.value); todoInput.value = '';">
       {{buttonLabel}}
     </button>
@@ -18,6 +24,7 @@ interface Todo {
 class InputBox {
   @Input() inputPlaceholder: string;
   @Input() buttonLabel: string;
+  // all the outputs of all the components need to be instances of EventEmitter
   @Output() inputText = new EventEmitter<string>();
   emitText(text: string) {
     this.inputText.emit(text);

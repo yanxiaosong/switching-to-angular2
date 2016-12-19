@@ -69,8 +69,12 @@ class TodoApp {
     completed: false
   }];
   name: string = 'John';
+
+  // During the component's life cycle(ngAfterContentInit), the value of itemsTemplate will be set
+  // as a reference of the template we passed as the content of the "todo-app" element.
   @ContentChild(TemplateRef)
   private itemsTemplate: TemplateRef<any>;
+
   addTodo(label: string) {
     this.todos.push({
       label,
